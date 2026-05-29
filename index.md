@@ -1,6 +1,6 @@
 # 外贸知识库索引
 
-> 最后更新: 2026-05-29 | 共 9 篇笔记
+> 最后更新: 2026-05-29 | 共 11 篇笔记
 
 ## 🌍 市场分析
 - [[german-led-lighting-market]] — 德国LED照明市场调研（€22-30蓝海带）
@@ -23,10 +23,11 @@
 - *(待沉淀)*
 
 ## 📦 选品策略
-- *(待沉淀)*
+- 🆕 [[product-selection-framework]] — 五大品类对比+六维评分卡+选品红线
 
 ## 👥 客户开发
 - [[cold-email-sequence]] — 5步开发信序列（Value-First策略）
+- 🆕 [[b2b-negotiation-sop]] — 谈判与跟单SOP（四大异议话术+五阶段+十大红旗）
 
 ## 🚢 运营执行
 - 🆕 [[eu-logistics-optimization]] — 中欧物流&关税优化（铁路/海外仓/IOSS）
