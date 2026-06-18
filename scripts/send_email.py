@@ -12,28 +12,28 @@ import sys, os, subprocess, sqlite3
 
 DB_PATH = "/root/code/trade-knowledge-flywheel/crm.db"
 CRM_SCRIPT = "/root/code/trade-knowledge-flywheel/scripts/crm.py"
-FROM_NAME = "ThinkingShirt"
+FROM_NAME = "Lao Wei"
 FROM_EMAIL = "ud.xiaoshan@gmail.com"
 
-# 产品卖点（沧州化妆刷）
-FEATURES = """Our Cangzhou factory offers:
-- OEM/ODM with your brand logo & custom packaging
-- 50+ brush styles (face, eye, lip, kabuki, silicone)
-- MOQ as low as 500 pcs per style
-- Vegan/cruelty-free certification available
-- 15-20 day production lead time
-- Factory-direct pricing: $1-5/pc (retail $10-30 in Middle East)"""
+# 产品卖点（沧州化妆刷）— 口语化
+FEATURES = """Here's what we can do together:
+- OEM/ODM — your brand, your design, your packaging
+- 50+ brush styles, from eye to kabuki
+- MOQ starts at just 500 pcs, so you can test the market risk-free
+- Vegan & cruelty-free certified (big plus for today's market)
+- 15-20 day turnaround
+- Factory price $1-5/pc — you sell at $10-30 in the Middle East, nice margin for both of us"""
 
-FOLLOWUP_BODY = """Hi,
+FOLLOWUP_BODY = """Hey,
 
-Just following up on my previous message about Cangzhou makeup brushes.
+Just checking in on my earlier message about the Cangzhou brushes.
 
-No pressure at all — I know you're busy. If now isn't the right time, I'm happy to reconnect when you're reviewing your beauty tools category.
+No rush at all — I know how busy things get. If the timing's not right, no worries. I'll circle back when it makes more sense.
 
-Best regards,
+All the best,
 {sender_name}
-{sender_email}
-Cangzhou, Hebei, China"""
+WhatsApp: [your number]
+Cangzhou, China"""
 
 def get_customer(cid):
     conn = sqlite3.connect(DB_PATH)
@@ -61,7 +61,7 @@ def generate_email(customer, contacts, is_followup=False):
     if not email_to:
         return None, None, "No email found"
 
-    salutation = f"Dear {contact_name}," if contact_name else "Dear Purchasing Team,"
+    salutation = f"Hi {contact_name}," if contact_name else "Hello,"
 
     if is_followup:
         body = FOLLOWUP_BODY.format(sender_name=FROM_NAME, sender_email=FROM_EMAIL)
@@ -69,21 +69,20 @@ def generate_email(customer, contacts, is_followup=False):
     else:
         body = f"""{salutation}
 
-I came across {company} and was impressed by your presence in the {country} beauty market.
+I noticed {company} — you guys have a solid presence in the {country} beauty market.
 
-I'm from Cangzhou, China — the world's largest makeup brush manufacturing hub, producing over 70% of global cosmetic brushes.
+My name's Lao Wei. I'm based in Cangzhou, China — that's the city that makes over 70% of the world's makeup brushes. Not a factory salesman, just someone who knows the right people here.
 
 {FEATURES}
 
-We currently supply brands in multiple markets and are looking for a reliable distribution partner in {country}. Would you be open to a brief call or sample shipment to explore fit?
+If this sounds interesting, happy to send a few samples your way — no commitment, just to see if there's a fit.
 
-Best regards,
+Cheers,
 {FROM_NAME}
-{FROM_EMAIL}
 WhatsApp: [your number]
-Cangzhou, Hebei, China"""
+Cangzhou, China"""
 
-    subject = f"Cangzhou Makeup Brushes — OEM/ODM for {company}"
+    subject = f"Makeup brushes from Cangzhou — {company}"
 
     return email_to, subject, body
 
