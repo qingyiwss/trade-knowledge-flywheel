@@ -32,7 +32,6 @@ No rush at all — I know how busy things get. If the timing's not right, no wor
 
 All the best,
 {sender_name}
-WhatsApp: [your number]
 Cangzhou, China"""
 
 def get_customer(cid):
@@ -79,7 +78,6 @@ If this sounds interesting, happy to send a few samples your way — no commitme
 
 Cheers,
 {FROM_NAME}
-WhatsApp: [your number]
 Cangzhou, China"""
 
     subject = f"Makeup brushes from Cangzhou — {company}"
