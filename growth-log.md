@@ -4,6 +4,15 @@
 
 ---
 
+## 飞轮 #13 (2026-06-18) — 外贸自动化客户开发系统 🤖
+
+- **需求**：自动化客户搜索→CRM→跟进提醒全流程
+- **产出**：`wiki/trade-automation-system.md` + CRM SQLite + Python CLI + 2 cron jobs
+- **能力**：himalaya v1.2.0 安装完成，SMTP待用户开启阿里云客户端密码
+- **待补**：Chromium CDP (Linux headless 二进制缺失)，LinkedIn 自动化搁置
+
+---
+
 ## 飞轮 #12 (2026-06-18) — 化妆刷中东客户开发 👥
 
 - **需求**：化妆刷品类客户筛选+开发物料准备
